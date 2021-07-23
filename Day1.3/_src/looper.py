@@ -15,7 +15,7 @@ class Loops:
     def start(self):
         print("This firewall can be surpassed by brute force. To do so, you must call the following function 1001 times:\n\nhack()\n\nHowever, you must figure out the proper syntax for calling this function. Good Luck!")
         
-    def hack(self):
+    def hack(self): 
         self.timesCalled += 1
         
         if self.timesCalled == 1:
