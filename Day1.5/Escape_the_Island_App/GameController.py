@@ -48,21 +48,23 @@ class GameController:
                 print("Your search yields nothing...")
             else:
                 if loot != None:
-                    print("You encounter "+str(encounter)+" and find "+str(loot))
+                    print("You encounter "+str(encounter.name)+" and find "+str(loot.name))
                     self.inventory.append(loot)
                 else:
-                    print("You encounter "+str(encounter)+" but find nothing...")
+                    print("You encounter "+str(encounter.name)+" but find nothing...")
                 
             tile.leaveTile()
 
             boatPartsCollected = 0
             for item in self.inventory:
-                if item["boatPart"]:
+                if item.boatPart:
                     boatPartsCollected += 1
 
             if boatPartsCollected == 3:
                 self.winGame()
                 return
+
+            print(boatPartsCollected)
                 
             #This is the start of our player input section. We'll modify this code to make the gameplay fun.
             decision = input("Keep searching the Deserted Island? (Y/N) ")

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jun 19 09:23:42 2019
-
 @author: J. Tyler McGoffin
 """
 
@@ -23,17 +22,3 @@ class DungeonTile:
         elif self.type == "end":
             self.image = pygame.image.load("ArtAssets9/exitTile.png")
         
-        if self.monster == "plankton":
-            self.monster = pygame.image.load("ArtAssets9/plankton.jpg")
-            
-        self.setLoot()
-        
-    def drawMonster(self):
-        return self.monster
-    
-    def setLoot(self):
-        if self.loot == "potion":
-            self.loot = pygame.transform.scale(pygame.image.load("ArtAssets9/potion.png"), (50, 50))
-            
-    def drawLoot(self):
-        return self.loot

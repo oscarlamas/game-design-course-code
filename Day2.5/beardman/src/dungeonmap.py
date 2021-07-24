@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jun 19 09:04:16 2019
-
 @author: J. Tyler McGoffin
 """
 
 import pygame, sys, dungeontile
+from monster import Monster
 from pygame.locals import *
 
 class Map:
@@ -18,12 +18,11 @@ class Map:
     def setUp(self):
         #create a random order of dungeon tiles and fill them with random stuff
         dungeonStart = dungeontile.DungeonTile(None, None, "start", False)
-        dungeon2 = dungeontile.DungeonTile(None, None, "center", False)
-        dungeon3 = dungeontile.DungeonTile(None, "plankton", "center", False)
-        dungeon4 = dungeontile.DungeonTile("potion", None, "center", False)
+        dungeon2 = dungeontile.DungeonTile(None, Monster(speed = 4), "center", False)
+        dungeon3 = dungeontile.DungeonTile(None, Monster(speed = 8), "center", False)
         dungeon5 = dungeontile.DungeonTile(None, None, "end", False)
         
-        self.map = [dungeonStart, dungeon2, dungeon3, dungeon4, dungeon5]
+        self.map = [dungeonStart, dungeon2, dungeon3, dungeon5]
                 
     def transitionTile(self, direction):
         if direction == 'right':
